@@ -4,6 +4,7 @@
     --header-bg: #061a20;
     --accent: #ff5c1a;
     --comp: #19b8d8;
+    --gold: #f0b429;
 }
 
 * {
@@ -26,7 +27,7 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 0 5%;
-    border-bottom: 1px solid rgba(25, 184, 216, 0.25);
+    border-bottom: 1px solid rgba(240, 180, 41, 0.2);
     background: var(--header-bg);
 }
 
@@ -44,19 +45,19 @@ body {
 .nav a {
     display: inline-block;
     padding: 0.4rem 1.5rem;
-    border: 1px solid var(--comp);
+    border: 1px solid var(--gold);
     border-radius: 999px;
     text-decoration: none;
-    color: #cfeef5;
+    color: #f2e8cf;
     font-size: 0.95rem;
-    box-shadow: 0 0 10px rgba(25, 184, 216, 0.25), inset 0 0 6px rgba(25, 184, 216, 0.12);
+    box-shadow: 0 0 10px rgba(240, 180, 41, 0.25), inset 0 0 6px rgba(240, 180, 41, 0.12);
     transition: background 0.3s, color 0.3s, box-shadow 0.3s;
 }
 
 .nav a:hover {
-    background: rgba(25, 184, 216, 0.15);
+    background: rgba(240, 180, 41, 0.15);
     color: #fff;
-    box-shadow: 0 0 14px rgba(25, 184, 216, 0.45), inset 0 0 8px rgba(25, 184, 216, 0.2);
+    box-shadow: 0 0 14px rgba(240, 180, 41, 0.45), inset 0 0 8px rgba(240, 180, 41, 0.2);
 }
 
 /* Hero */
