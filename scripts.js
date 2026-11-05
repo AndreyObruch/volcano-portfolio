@@ -1,34 +1,38 @@
 (function () {
-    var overlay = document.getElementById('projectModal');
-    var titleEl = document.getElementById('modalTitle');
-    var descEl = document.getElementById('modalDesc');
-    var closeBtn = document.getElementById('modalClose');
+    const overlay = document.getElementById('modal');
+    const box = overlay.querySelector('.modal-box');
+    const closeBtn = document.getElementById('modalClose');
+    const titleEl = document.getElementById('modalTitle');
+    const descEl = document.getElementById('modalDesc');
+    const linkEl = document.getElementById('modalLink');
+    const cards = document.querySelectorAll('.project-card');
 
-    function openModal(btn) {
-        titleEl.textContent = btn.getAttribute('data-title') || '';
-        descEl.textContent = btn.getAttribute('data-desc') || '';
+    function openModal(card) {
+        titleEl.textContent = card.dataset.title || '';
+        descEl.textContent = card.dataset.desc || '';
+        linkEl.href = card.dataset.url || '#';
         overlay.classList.add('is-open');
         overlay.setAttribute('aria-hidden', 'false');
-        document.body.style.overflow = 'hidden';
+        document.body.classList.add('modal-open');
     }
 
     function closeModal() {
         overlay.classList.remove('is-open');
         overlay.setAttribute('aria-hidden', 'true');
-        document.body.style.overflow = '';
+        document.body.classList.remove('modal-open');
     }
 
-    document.querySelectorAll('.btn-more').forEach(function (btn) {
-        btn.addEventListener('click', function () { openModal(btn); });
+    cards.forEach((card) => {
+        card.addEventListener('click', () => openModal(card));
     });
 
     closeBtn.addEventListener('click', closeModal);
 
-    overlay.addEventListener('click', function (e) {
-        if (e.target === overlay) closeModal();
+    overlay.addEventListener('click', (e) => {
+        if (!box.contains(e.target)) closeModal();
     });
 
-    document.addEventListener('keydown', function (e) {
+    document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape' && overlay.classList.contains('is-open')) closeModal();
     });
 })();
