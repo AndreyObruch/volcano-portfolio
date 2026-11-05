@@ -1,3 +1,7 @@
+:root {
+    --header-h: 96px;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -13,19 +17,19 @@ body {
 
 /* Header */
 .header {
+    height: var(--header-h);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 2rem 5%;
+    padding: 0 5%;
     border-bottom: 1px solid #222;
     background: #0a0a0a;
 }
 
-.logo {
-    font-size: 1.5rem;
-    font-weight: 700;
-    letter-spacing: 2px;
-    color: #fff;
+.logo img {
+    height: 48px;
+    width: auto;
+    display: block;
 }
 
 .nav a {
@@ -41,27 +45,13 @@ body {
 
 /* Hero */
 .hero {
-    padding: 10rem 5%;
-    text-align: left;
+    height: calc(100vh - var(--header-h));
     background: #0a0a0a url('img/bg-hero.jpg') center bottom / cover no-repeat;
-}
-
-.hero h1 {
-    font-size: 3.5rem;
-    margin-bottom: 1rem;
-    font-weight: 700;
-    color: #fff;
-}
-
-.hero p {
-    font-size: 1.25rem;
-    color: #888;
 }
 
 /* Projects */
 .projects {
     padding: 5rem 5%;
-    background: #0a0a0a;
 }
 
 .projects h2 {
@@ -119,5 +109,4 @@ body {
     text-align: left;
     border-top: 1px solid #222;
     color: #666;
-    background: #0a0a0a;
 }
