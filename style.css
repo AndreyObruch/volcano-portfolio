@@ -42,8 +42,8 @@ body {
 /* Hero */
 .hero {
     padding: 10rem 5%;
-    text-align: center;
-    background: #0a0a0a;
+    text-align: left;
+    background: #0a0a0a url('img/bg-hero.jpg') center bottom / cover no-repeat;
 }
 
 .hero h1 {
@@ -67,7 +67,7 @@ body {
 .projects h2 {
     font-size: 2rem;
     margin-bottom: 3rem;
-    text-align: center;
+    text-align: left;
     color: #fff;
 }
 
@@ -116,7 +116,7 @@ body {
 /* Footer */
 .footer {
     padding: 3rem 5%;
-    text-align: center;
+    text-align: left;
     border-top: 1px solid #222;
     color: #666;
     background: #0a0a0a;
