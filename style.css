@@ -204,8 +204,7 @@ body.modal-open {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rgba(0, 0, 0, 0.75);
-    backdrop-filter: blur(4px);
+    background: var(--bg) url('img/bg-hero.jpg') center / cover no-repeat;
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.3s, visibility 0.3s;
@@ -219,10 +218,10 @@ body.modal-open {
 
 .modal-box {
     position: relative;
-    width: 1414px;
-    height: 698px;
+    width: 1184px;
+    height: 880px;
     max-width: 92vw;
-    max-height: 86vh;
+    max-height: 88vh;
     border: 1px solid rgba(255, 217, 122, 0.35);
     border-radius: 6px;
     background: #0a0a0a url('img/modal-bg.jpg') center / cover no-repeat;
