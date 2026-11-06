@@ -114,10 +114,14 @@ body.modal-open {
 }
 
 .projects h2 {
-    font-size: 2rem;
+    font-family: 'Unbounded', sans-serif;
+    font-weight: 600;
+    font-size: 2.75rem;
+    line-height: 1.15;
     margin-bottom: 3rem;
-    text-align: left;
-    color: #fff;
+    text-align: center;
+    color: var(--gold-light);
+    text-shadow: 0 0 24px rgba(240, 180, 41, 0.35);
 }
 
 .project-grid {
@@ -127,6 +131,11 @@ body.modal-open {
 }
 
 .project-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    min-height: 300px;
     padding: 2.5rem;
     border: 1px solid #222;
     border-radius: 4px;
@@ -152,8 +161,40 @@ body.modal-open {
 }
 
 .card-link {
+    margin-top: auto;
     color: var(--gold-light);
     font-weight: 600;
+}
+
+/* Cover card */
+.project-card.is-cover {
+    justify-content: flex-end;
+    overflow: hidden;
+    background: #0a0a0a url('img/card-history.jpg') center / cover no-repeat;
+}
+
+.project-card.is-cover::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.45) 55%, rgba(0,0,0,0) 100%);
+}
+
+.project-card.is-cover h3,
+.project-card.is-cover p,
+.project-card.is-cover .card-link {
+    position: relative;
+    z-index: 1;
+}
+
+.project-card.is-cover h3 {
+    color: var(--gold-light);
+    text-shadow: 0 2px 16px rgba(0,0,0,0.85);
+}
+
+.project-card.is-cover p {
+    color: #e8e8e8;
+    text-shadow: 0 1px 12px rgba(0,0,0,0.85);
 }
 
 /* Modal */
@@ -209,6 +250,7 @@ body.modal-open {
     line-height: 1;
     cursor: pointer;
     transition: background 0.3s, box-shadow 0.3s;
+    z-index: 2;
 }
 
 .modal-close:hover {
